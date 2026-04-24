@@ -18,7 +18,7 @@
        <div id="menu-Screen" class="screen active">
         <section id="profile-Section">
             <div id="profile-Picture-Container">
-                <img id="profile-Picture" src="#">
+                <img id="profile-Picture" src="images/pfp.png">
             </div>
             <main id="main-Menu">
             
@@ -47,20 +47,19 @@
         </section>
         <main id="gender-Menu">
             <section id="gender">
-                <button onclick="goTo('character-Select')"id="male" class="gender-Btns">
+                <button onclick="goTo('character-Select-male')"id="male" class="gender-Btns">
                     <img src="/images/male.png" class="selection" type="png" alt="male-game-start">
                 </button>
-                <button id="female" class="gender-Btns">
+                <button onclick="goTo('character-Select-female')" id="female" class="gender-Btns">
                     <img src="/images/female.png" class="selection" type="png" alt="female-game-start">
                 </button>
             </section>
         </main>
     </div>
-</div>
     <!--End of Gender Select Screen-->
 
     <!--Start of character select-->
-    <div id="character-Select" class="screen">
+    <div id="character-Select-male" class="screen">
         <section id="profile-Section">
             <div id="profile-Picture-Container">
                 <img id="profile-Picture" src="#">
@@ -68,12 +67,50 @@
             <h1>Choose Your Start</h1>
         </section>
             <section id="character-Choice">
-                <button onclick="goTo('gameScreen')">
-                     
+                <button onclick="goTo('game-Screen')" id="Jessie" class="characters">
+                    <img src="images/jessie-male.png" alt="jessie-male">
+                </button>
+
+                <button onclick="goTo('game-Screen')" id="Jesus" class="characters"> 
+                    <img src="images/jesus.png" alt="jessie-male">
+                </button>
+
+                <button onclick="goTo('game-Screen')" id="Rei" class="characters"> 
+                    <img src="/images/dna.png">
                 </button>
             </section>
     </div>
+
+    <div id="character-Select-female" class="screen">
+        <section id="profile-Section">
+            <div id="profile-Picture-Container">
+                <img id="profile-Picture" src="#">
+            </div>
+            <h1>Choose Your Start</h1>
+        </section>
+            <section id="character-Choice">
+                <button onclick="goTo('game-Screen')" id="Jessie" class="characters">
+                    <img src="/images/jessie-female.png">
+                </button>
+
+                <button onclick="goTo('game-Screen')" id="Juanita" class="characters"> 
+                    <img src="/images/juanita.png">
+                </button>
+
+                <button onclick="goTo('game-Screen')" id="Rei" class="characters"> 
+                    <img src="/images/rei-female.png">
+                </button>
+            </section>
+    </div>
+    
     <!--End of character select-->
+
+    <!--Start of Main Game Screen-->
+    <div id="game-Screen"> 
+
+    </div>
+     <!--End of Main Game Screen-->
+</div>
     <script src="app.js"></script>
 </body>
 </html>

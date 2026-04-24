@@ -7,6 +7,11 @@
 :root {
     --mm-Btns: #0D1E3A;
     --universal-white: #ffffff;
+    --character-Btn: #37D9A5;
+    --decision: #74E5FF;
+    --overlay: #445A79;
+    --confirm: #3ABEFF;
+    --deny: #FD5757;
 }
 
 html, body {
@@ -23,6 +28,10 @@ html, body {
     background-size: cover;
 }
 
+#profile-Picture{
+    border-radius:10000px;
+    width:12%;
+}
 
 .screen {
     display: none;
@@ -61,7 +70,7 @@ html, body {
     border-radius:25px;
     font-size:25px;
 }
-}
+
 
 #profile-section {
     display: flex;
@@ -75,3 +84,17 @@ html, body {
     border-radius: 3.25rem;
 }
 
+.characters {
+    height: 10vh;
+    
+}
+
+img [src="/images/jessie-female.png"]{
+    transform: rotateY('180deg');
+}
+
+
+#Rei > img {
+    height: 20vh;
+    width: 15vw;
+}
