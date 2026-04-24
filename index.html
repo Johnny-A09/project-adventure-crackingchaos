@@ -11,35 +11,34 @@
     <link rel="icon" href="#">
 </head>
 <body id="game-Scene">
-     <section id="profile-Section">
-        <div id="profile-Picture-Container">
-            <img id="profile-Picture" src="#">
-        </div>
-     </section>
+     
+    <div id="app"> <!--Container for whole game-->
+    
+    <!--Main Menu Screen-->
+        <section id="profile-Section">
+            <div id="profile-Picture-Container">
+                <img id="profile-Picture" src="#">
+            </div>
+        </section>
 
-     <main id="main-Menu">
-        <div id="logo-Container">
-            <img id="cc-Logo" src="/imagines/logo.png" type="png" alt="cracking-Chaos-Logo">
-        </div>
+        <main id="main-Menu" class="screen active">
+            <div id="logo-Container">
+                <img id="cc-Logo" src="/images/logo.png" alt="cracking-Chaos-Logo">
+            </div>
+            <div id="main-Menu-Btns">
+                <button onclick="goTo('gender-Screen')" id="start-Btn" class="mm-Btns">Start</button>
+                <button id="settings-Btn" class="mm-Btns">Settings</button>
+                <button id="load-Btn" class="mm-Btns">Load</button>
+            </div>
+        </main>
+<!--End of Main Menu Screen-->
+        
+<!--Start of Gender Select Screen-->
+<div id="gender-Screen" class="screen">
+          
 
-        <div id="main-Menu-Btns">
-            <button id="start-Btn" class="mm-Btns">
-                Start
-            </button>
-            <button id="settings-Btn" class="mm-Btns">
-                Settings
-            </button>
-            <button id="load-Btn" class="mm-Btns">
-                Load
-            </button>
-        </div>
-     </main> 
+    </div>
 
-     <footer>
-        <small>
-            ©2026 CART Website Application Development. All rights reserved.
-        </small>
-     </footer>
-     <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

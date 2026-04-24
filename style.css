@@ -9,18 +9,30 @@
     --universal-white: #ffffff;
 }
 
-#game-Scene {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    background-image: url(/imagines/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+html, body {
+    height: 100%;
 }
 
-#main-Menu {
+#app {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url(images/background.png);
+}
+
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+
+#main-Menu {
     justify-content: center;
     align-items: center;
 }
@@ -28,9 +40,9 @@
 #main-Menu-Btns {
     display: flex;
     flex-direction: column;
-    height:30vh;
-    width:33vw;
-    justify-content:space-around;
+    height: 30vh;
+    width: 33vw;
+    justify-content: space-around;
 }
 
 .mm-Btns {
@@ -39,7 +51,7 @@
     background-color: var(--mm-Btns);
     color: var(--universal-white);
     cursor: pointer;
-    border:none;
+    border: none;
     height: 5vh;
     width: 100%;
 }
