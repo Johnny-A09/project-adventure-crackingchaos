@@ -15,13 +15,14 @@
 <div id="app"> <!--Container for whole game-->
     
     <!--Main Menu Screen-->
+       <div id="menu-Screen" class="screen active">
         <section id="profile-Section">
             <div id="profile-Picture-Container">
                 <img id="profile-Picture" src="#">
             </div>
-        </section>
-
-        <main id="main-Menu" class="screen active">
+            <main id="main-Menu">
+            
+            </section>
             <div id="logo-Container">
                 <img id="cc-Logo" src="/images/logo.png" alt="cracking-Chaos-Logo">
             </div>
@@ -31,14 +32,32 @@
                 <button id="load-Btn" class="mm-Btns">Load</button>
             </div>
         </main>
-<!--End of Main Menu Screen-->
-        
-<!--Start of Gender Select Screen-->
-<div id="gender-Screen" class="screen">
-          
+       </div>
 
+        
+    <!--End of Main Menu Screen-->
+        
+    <!--Start of Gender Select Screen-->
+    <div id="gender-Screen" class="screen">
+        <section id="profile-Section">
+            <div id="profile-Picture-Container">
+                <img id="profile-Picture" src="#">
+            </div>
+            <h1>Choose Your Start</h1>
+        </section>
+        <main id="gender-Menu">
+            <section id="gender">
+                <button id="male" class="gender-Btns">
+                    <img src="/images/male.png" class="selection" type="png" alt="male-game-start">
+                </button>
+                <button id="female" class="gender-Btns">
+                    <img src="/images/female.png" class="selection" type="png" alt="female-game-start">
+                </button>
+            </section>
+        </main>
     </div>
 </div>
+    <!--End of Gender Select Screen-->
     <script src="app.js"></script>
 </body>
 </html>
