@@ -40,7 +40,8 @@ startButton.addEventListener("click", starter =>{
     mainMenu.style.display = "none";
 })
 maleButton.addEventListener("click", male =>{
-   
+       mainMenu.style.display = "none";
+
     gender = "male";
     return gender;
 })
