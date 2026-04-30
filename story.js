@@ -1,3 +1,4 @@
+export let playerName = "";
 export const story = {
    
     jessieStart: {
@@ -51,7 +52,7 @@ export const story = {
     //This is where Jesus / Juanitia story starts
 
     jesusjuanitaStart: {
-        text: `Your name is ${playerName}, or ${playerName}, depending on who's asking. You've always moved between worlds without belonging to any of them, which made you the crew's best front person. Charm, fluency in three languages, and a face nobody forgets. When the SGA hit the house, you were the last one out the back window. You landed on your feet. You always do.\n\nNow you're in Boyle Heights, sleeping on a cousin's couch, too proud to explain why you showed up with nothing. Your cousin asks no questions. The neighborhood, though, it knows things. The corner store owner keeps giving you looks. The kids on the block stop talking when you pass.`,
+        text: `Your name is ${playerName}. You've always moved between worlds without belonging to any of them, which made you the crew's best front person. Charm, fluency in three languages, and a face nobody forgets. When the SGA hit the house, you were the last one out the back window. You landed on your feet. You always do.\n\nNow you're in Boyle Heights, sleeping on a cousin's couch, too proud to explain why you showed up with nothing. Your cousin asks no questions. The neighborhood, though, it knows things. The corner store owner keeps giving you looks. The kids on the block stop talking when you pass.`,
         choice: ['Ask the corner store owner what he knows', 'Keep your head down at your cousin\'s and plan your next move', 'Work the neighborhood -- introduce yourself, make connections'],
         idsForChoices: ['jesusjuanitaStoreOwner', 'jesusjuanitaCousin', 'jesusjuanitaNetwork'],
         pictureForScene: ""
@@ -83,7 +84,7 @@ export const story = {
 
     //Rei story pathway
     reiStart: {
-        text: `Your name is Rei. You were always the technical one, the one who perfected the recipes, calibrated the temperatures, tracked the batch quality. When the SGA hit, you were in the middle of a cook. You barely grabbed your notebook before running. That notebook, filled with formulas, ratios, and notes in the margins, is the only thing you have left.\n\nYou've found a temporary room in a hostel in Silver Lake. It's clean and anonymous. You sit on the bed and open the notebook. You could recreate everything. Better, even. But without the crew, without the resources, you're a brain with no body.`,
+        text: `Your name is ${playerName}. You were always the technical one, the one who perfected the recipes, calibrated the temperatures, tracked the batch quality. When the SGA hit, you were in the middle of a cook. You barely grabbed your notebook before running. That notebook, filled with formulas, ratios, and notes in the margins, is the only thing you have left.\n\nYou've found a temporary room in a hostel in Silver Lake. It's clean and anonymous. You sit on the bed and open the notebook. You could recreate everything. Better, even. But without the crew, without the resources, you're a brain with no body.`,
         choice: ['Post on underground forums for collaborators', 'Try to source ingredients and cook a small test batch alone', 'Reach out to your old ingredient supplier'],
         idsForChoices: ['reiForum', 'reiCook', 'reiSupplier'],
         pictureForScene: ""

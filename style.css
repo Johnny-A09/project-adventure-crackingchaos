@@ -32,8 +32,11 @@ html, body {
     border-radius:10000px;
     width:12%;
 }
-
 .screen{
+    display: none;
+}
+.screen.active{
+    display:flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
@@ -70,10 +73,12 @@ html, body {
 #profile-section {
     display: flex;
     flex-direction: row;
-    
-
 }
-
+#profile-section > button{
+    background-color:transparent;
+    border:none;
+    width:2vw;
+}
 .gender-Btns {
     cursor: pointer;
     border-radius: 3.25rem;
@@ -130,4 +135,14 @@ img [src="/images/jessie-female.png"]{
     justify-content: space-between;
     align-items: center;
     flex: 0.5;
+}
+
+.back-other{
+    width:2vw;
+    background-color:transparent;
+    border:none;
+}
+
+.back-other> img{
+    width:2vw;
 }

@@ -1,4 +1,4 @@
-import {story} from "/story.js";
+import {story, playerName} from "/story.js";
 const choice1 = document.getElementById("choice-1");
 const choice2 = document.getElementById("choice-2");
 const choice3 = document.getElementById("choice-3");
@@ -7,9 +7,6 @@ const gameButton = document.getElementById("game-shortcut");
 const startButton = document.getElementById("start-Btn");
 const maleButton = document.getElementById("male");
 const femaleButton = document.getElementById("female");
-const jessieButton = document.getElementById("Jessie");
-const jesusButton = document.getElementById("Jesus-juanita");
-const rei1Button = document.getElementById("Rei");
 const mainMenu = document.getElementById("menu-Screen");
 const genderScreen = document.getElementById("gender-Screen");
 const maleSelect = document.getElementById("character-Select-male");
@@ -17,7 +14,22 @@ const femaleSelect = document.getElementById("character-Select-female");
 const gameScreen = document.getElementById("game-Screen");
 let position = ["menu-Screen",];
 let gender = "";
-const characterButtons = [jessieButton, jesusButton, reiButton];
+let character = "";
+const gameStats = { fame: 0, wealth: 0, heat: 0};
+
+function playerNameUpdate(){
+    playerName = character;
+    return playerName;
+}
+
+function goTo(screen) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(screen).classList.add('active');
+    if(position.at(-1) === screen){return;}
+    else{
+    findPos(screen);
+    };
+}
 
 function findPos(now){
     position.push(now);
@@ -36,25 +48,40 @@ document.getElementById('back').addEventListener("click", backPage => {
     };
 })
 
-startButton.addEventListener("click", starter =>{
-    mainMenu.style.display = "none";
+startButton.addEventListener("click", () =>{
+    goTo("gender-Screen");
 })
-maleButton.addEventListener("click", male =>{
-       mainMenu.style.display = "none";
 
+maleButton.addEventListener("click", () =>{
+    goTo("character-Select-male");
     gender = "male";
     return gender;
 })
-femaleButton.addEventListener("click", female =>{
+
+femaleButton.addEventListener("click", () =>{
     goTo("character-Select-female");
     gender = "female";
     return gender;
 })
-characterButtons.forEach(btn => {
+
+document.querySelectorAll(".characters").forEach(btn => {
     btn.addEventListener("click", (starter) =>{
-        const selectedCharacter = starter.curentTarget.id;
+        const selectedCharacter = starter.currentTarget.id;
         console.log("Selected", selectedCharacter);
         goTo("game-Screen");
+        character = selectedCharacter;
+        playerNameUpdate();
+        console.log(character);
+        return character;
 })})
 
-const gameStats = { fame: 0, wealth: 0, heat: 0};
+
+document.getElementById("male-slect").addEventListener("click", () =>{
+    goTo("character-Select-female");
+    console.log("test-path");
+})
+
+document.getElementById("male-slect1").addEventListener("click", () =>{
+    goTo("game-Screen");
+    console.log("test-path");
+})

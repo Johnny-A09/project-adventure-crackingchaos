@@ -19,24 +19,24 @@
         <button id="back" class="back"> 
             <img src="/images/white-arrow.png">
         </button>
-        <button id="character-select" class="back"> 
+        <button id="male-slect" class="back-other"> 
             <img src="/images/back-arrow.png">
         </button>
-        <button id="game-shortcut" class="back"> 
+        <button id="male-slect1" class="back-other"> 
             <img src="/images/back-arrow.png">
         </button>
     </section>
  
     
     <!--Main Menu Screen-->
-       <div id="menu-Screen" class="screen" style="display:flex">
+       <div id="menu-Screen" class="screen active">
         <section id="profile-Section">
-            <div id="profile-Picture-Container">
+            <button id="profile-Picture-Container">
                 <img id="profile-Picture" src="images/pfp.png">
-            </div>
-            <main id="main-Menu">
+            </button>
+        </section>
+        <main id="main-Menu">
             
-            </section>
             <div id="logo-Container">
                 <img id="cc-Logo" src="/images/logo.png" alt="cracking-Chaos-Logo">
             </div>
@@ -52,13 +52,13 @@
     <!--End of Main Menu Screen-->
         
     <!--Start of Gender Select Screen-->
-    <div id="gender-Screen" class="screen" style="display:none">
+    <div id="gender-Screen" class="screen">
         <section id="profile-Section">
-            <div id="profile-Picture-Container">
+            <button id="profile-Picture-Container">
                 <img id="profile-Picture" src="images/pfp.png">
-            </div>
-            <h1>Choose Your Start</h1>
+            </button>
         </section>
+        <h1>Choose Your Start</h1>
         <main id="gender-Menu">
             <section id="gender">
                 <button id="male" class="gender-Btns">
@@ -73,13 +73,13 @@
     <!--End of Gender Select Screen-->
 
     <!--Start of character select-->
-    <div id="character-Select-male" class="screen" style="display:none">
+    <div id="character-Select-male" class="screen">
         <section id="profile-Section">
-            <div id="profile-Picture-Container">
+            <button id="profile-Picture-Container">
                 <img id="profile-Picture" src="images/pfp.png">
-            </div>
-            <h1>Choose Your Start</h1>
+            </button>
         </section>
+        <h1>Choose Your Start</h1>
             <section id="character-Choice">
                 <button id="Jessie" class="characters">
                     <img src="images/jessie-male.png" alt="jessie-male">
@@ -95,23 +95,23 @@
             </section>
     </div>
 
-    <div id="character-Select-female" class="screen" style="display:none">
+    <div id="character-Select-female" class="screen">
         <section id="profile-Section">
             <button id="profile-Picture-Container">
                 <img id="profile-Picture" src="images/pfp.png">
             </button>
-            <h1>Choose Your Start</h1>
         </section>
+        <h1>Choose Your Start</h1>
             <section id="character-Choice">
-                <button id="Jessie" class="characters">
+                <button id="Jessie-female" class="characters">
                     <img src="/images/jessie-female.png">
                 </button>
 
-                <button id="Jesus-juanita" class="characters"> 
+                <button id="juanita" class="characters"> 
                     <img src="/images/juanita.png">
                 </button>
 
-                <button id="Rei" class="characters"> 
+                <button id="Rei-female" class="characters"> 
                     <img src="/images/rei-female.png">
                 </button>
 
@@ -121,7 +121,7 @@
     <!--End of character select-->
 
     <!--Start of Main Game Screen-->
-    <div id="game-Screen" class="screen" style="display:none"> 
+    <div id="game-Screen" class="screen"> 
         <section id="game-Container">
             <div class="background" id="background"><img src="images/placeholder.jpeg" id="scene" alt="story background"></div>
         <section id="current-text" class="text-cont"></section>
