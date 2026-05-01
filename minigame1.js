@@ -45,7 +45,7 @@ function buildLives() {
  
 function startGame() {
   score = 0; lives = 3; round = 1;
-  pos = 0; dir = 1; speed = 0.9;
+  pos = 0; dir = 1; speed = 5;
   gameActive = true;
   document.getElementById('result-overlay').style.display = 'none';
   document.getElementById('score').textContent = '0';
