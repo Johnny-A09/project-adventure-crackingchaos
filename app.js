@@ -124,7 +124,7 @@ function sceneCreation(node){
         startGame(); 
         return;
     }
-    
+    choiceCheck(node.choice);
     choice1.textContent = node.choice.at(0);
     choice2.textContent = node.choice.at(1);
     choice3.textContent = node.choice.at(2);
@@ -215,6 +215,20 @@ logBtn.addEventListener("click", ()=>{
 closeLogs.addEventListener("click", ()=>{
     logOverlay.style = "display:none;";
 })
+
+function choiceCheck(current){
+    if(current.length === 1){
+        choice2.style = "display:none;";
+        choice3.style = "display:none;";
+    }else if(current.length === 2){
+        choice2.style = "display:block;";
+        choice3.style = "display:none;";
+    }else{
+        choice1.style = "display:block;";
+        choice2.style = "display:block;";
+        choice3.style = "display:block;";
+    }
+}
 
 document.getElementById("shop-icon").addEventListener("click", () => {
     document.getElementById("shop-wealth-val").textContent = window.gameStats.wealth;
