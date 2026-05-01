@@ -28,7 +28,6 @@ const choices = [choice1, choice2, choice3];
 let position = ["menu-Screen",];
 let gender = false;
 let character = "";
-let playerName = "";
 let textLogs = [];
 let currentChoiceIds = [];
 let burgerStatus = false;
@@ -68,6 +67,8 @@ startButton.addEventListener("click", () =>{
 
 maleButton.addEventListener("click", () =>{
     goTo("character-Select-male");
+    gender = false;
+    return gender;
 })
 
 femaleButton.addEventListener("click", () =>{
