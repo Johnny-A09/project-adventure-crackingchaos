@@ -425,7 +425,7 @@ img[src="/images/jessie-female.png"]{
   margin-top: 1.5rem;
 }
  
-.qte-btn {
+.qte-btn, .qte-btn-res {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   font-weight: 700;

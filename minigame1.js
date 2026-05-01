@@ -102,7 +102,7 @@ function handleClick() {
   document.getElementById('score').textContent = Math.max(0, score);
   round++;
   document.getElementById('round-num').textContent = Math.min(round, totalRounds);
-  speed = Math.min(2.6, 0.9 + (round - 1) * 0.28) * window.miniGameSpeedMult;
+  speed = Math.min(5.1, 10 + (round - 1) * 0.1) * window.miniGameSpeedMult;
  
   if (lives <= 0)          { endGame(false); return; }
   if (round > totalRounds) { endGame(true);  return; }
@@ -116,6 +116,7 @@ function endGame(survived) {
   var rt = document.getElementById('result-title');
   var rs = document.getElementById('result-sub');
   var btn = ov.querySelector('.qte-btn');
+  var resBtn = ov.querySelector('.qte-btn-res');
 
   ov.style.display = 'flex';
 
@@ -126,13 +127,13 @@ function endGame(survived) {
     rs.textContent = 'Final score: ' + Math.max(0, score);
     btn.textContent = 'Continue';
     btn.onclick = continueStory;
-    setTimeout(continueStory, 2000);
+    
   } else {
     rt.textContent = 'CRACKED';
     rt.style.color = '#e74c3c';
     rs.textContent = 'Score: ' + Math.max(0, score);
-    btn.textContent = 'Try Again';
-    btn.onclick = startGame;
+    resBtn.textContent = 'Try Again';
+    resBtn.onclick = startGame;
   }
 }
  
