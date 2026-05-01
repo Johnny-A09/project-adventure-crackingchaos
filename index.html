@@ -19,22 +19,29 @@
         <button id="back" class="back"> 
             <img src="/images/white-arrow.png">
         </button>
+        <section id="profile-Section1">
+            <button id="profile-Picture-Container">
+                <img id="profile-Picture" src="images/pfp.png">
+            </button>
+        </section>
         <button id="male-slect" class="back-other"> 
             <img src="/images/back-arrow.png">
         </button>
         <button id="male-slect1" class="back-other"> 
             <img src="/images/back-arrow.png">
         </button>
+        
+        <button id="shop-icon" class="burger">
+    <img src="images/shop-icon.png" alt="shop icon">
+</button>
+        <button id="burger-icon" class="burger">
+            <img src="images/burger.png" alt="burger icon">
+        </button>
     </section>
  
     
     <!--Main Menu Screen-->
        <div id="menu-Screen" class="screen active">
-        <section id="profile-Section">
-            <button id="profile-Picture-Container">
-                <img id="profile-Picture" src="images/pfp.png">
-            </button>
-        </section>
         <main id="main-Menu">
             
             <div id="logo-Container">
@@ -53,11 +60,6 @@
         
     <!--Start of Gender Select Screen-->
     <div id="gender-Screen" class="screen">
-        <section id="profile-Section">
-            <button id="profile-Picture-Container">
-                <img id="profile-Picture" src="images/pfp.png">
-            </button>
-        </section>
         <h1>Choose Your Start</h1>
         <main id="gender-Menu">
             <section id="gender">
@@ -74,18 +76,13 @@
 
     <!--Start of character select-->
     <div id="character-Select-male" class="screen">
-        <section id="profile-Section">
-            <button id="profile-Picture-Container">
-                <img id="profile-Picture" src="images/pfp.png">
-            </button>
-        </section>
         <h1>Choose Your Start</h1>
             <section id="character-Choice">
                 <button id="Jessie" class="characters">
                     <img src="images/jessie-male.png" alt="jessie-male">
                 </button>
 
-                <button id="Jesus-juanita" class="characters"> 
+                <button id="alex" class="characters"> 
                     <img src="images/jesus.png" alt="jessie-male">
                 </button>
 
@@ -96,18 +93,13 @@
     </div>
 
     <div id="character-Select-female" class="screen">
-        <section id="profile-Section">
-            <button id="profile-Picture-Container">
-                <img id="profile-Picture" src="images/pfp.png">
-            </button>
-        </section>
         <h1>Choose Your Start</h1>
             <section id="character-Choice">
                 <button id="Jessie-female" class="characters">
                     <img src="/images/jessie-female.png">
                 </button>
 
-                <button id="juanita" class="characters"> 
+                <button id="alex-female" class="characters"> 
                     <img src="/images/juanita.png">
                 </button>
 
@@ -123,7 +115,10 @@
     <!--Start of Main Game Screen-->
     <div id="game-Screen" class="screen"> 
         <section id="game-Container">
-            <div class="background" id="background"><img src="images/placeholder.jpeg" id="scene" alt="story background"></div>
+            <div class="background" id="background">
+                <img src="images/placeholder.jpeg" id="scene" alt="story background">
+                <img src="images/jessie-male.png" alt="main character" id="scene-character">
+            </div>
         <section id="current-text" class="text-cont"></section>
         <section id="choice-Container">
             <button id="choice-1" class="choices"></button>
@@ -134,7 +129,110 @@
 
     </div>
      <!--End of Main Game Screen-->
+
+    <div id="burger-display" class="burger-cont" style="display:none;">
+        <button id="settings" class="burger-btn">Settings</button>
+        <button id="save" class="burger-btn">Save</button>
+        <button id="logs" class="burger-btn">Logs</button>
+        <img id="cc-Logo" src="/images/logo.png" alt="cracking-Chaos-Logo">
+    </div>
+
+    <div id="logs-overlay" class="logs-overlay" style="display:none;">
+        <button id="closer" class="close-log">Close</button>
+        <span id="log-container"></span>
+    </div>
+
+    <div id="save-overlay" class="save-overlay" style="display:none;">
+
+    </div>
+
+    <div id="setting-overlay" class="setting-overlay" style="display:none;">
+
+    </div>
+
+     <div id="miniGame1" class="screen">
+        <div class="qte-root" id="root">
+    <div class="hit-flash" id="flash"></div>
+    <div class="qte-content">
+      
+ 
+      <div class="score-row">
+        <div class="stat-block">
+          <div class="stat-label">Score</div>
+          <div class="stat-val" id="score">0</div>
+        </div>
+        <div class="lives-row" id="lives-row"></div>
+        <div class="stat-block">
+          <div class="stat-label">Round</div>
+          <div class="stat-val" id="round-num">1</div>
+        </div>
+      </div>
+ 
+      <div class="track-wrap">
+        <div class="track-bg" id="track-bg"></div>
+        <div class="needle" id="needle"></div>
+      </div>
+ 
+      <div class="feedback" id="feedback">&nbsp;</div>
+ 
+      <div class="btn-row">
+        <button class="qte-btn" id="main-btn" onclick="handleClick()">Click!</button>
+      </div>
+    </div>
+ 
+    <div class="result-overlay" id="result-overlay" style="display:none">
+  <div class="result-title" id="result-title"></div>
+  <div class="result-sub" id="result-sub"></div>
+  <div class="qte-result-btns">
+    <button class="qte-btn" onclick="startGame()">Try Again</button>
+    <button class="qte-btn" id="continue-btn" onclick="continueStory()">Continue</button>
+  </div>
 </div>
+
+
+<div id="shop-Screen" style="display:none; position:fixed; inset:0; z-index:100; flex-direction:column; align-items:center; justify-content:flex-start; min-height:100vh; width:100%; background-color: rgba(0,0,0,0.85);">
+    <div id="shop-container">
+        <h1 id="shop-title">Black Market</h1>
+        <div id="shop-wealth-display">💰 Wealth: <span id="shop-wealth-val">0</span></div>
+
+        <div class="shop-item" id="item-slow">
+            <div class="shop-item-info">
+                <span class="shop-item-name">Steady Hands</span>
+                <span class="shop-item-desc">Slows the needle speed</span>
+            </div>
+            <div class="shop-item-right">
+                <span class="shop-item-cost">Cost: 30</span>
+                <button class="shop-buy-btn" onclick="buyItem('slow')">Buy</button>
+            </div>
+        </div>
+
+        <div class="shop-item" id="item-wealth">
+            <div class="shop-item-info">
+                <span class="shop-item-name">Street Connect</span>
+                <span class="shop-item-desc">Earn more wealth per minigame</span>
+            </div>
+            <div class="shop-item-right">
+                <span class="shop-item-cost">Cost: 20</span>
+                <button class="shop-buy-btn" onclick="buyItem('wealth')">Buy</button>
+            </div>
+        </div>
+
+        <div class="shop-item" id="item-heat">
+            <div class="shop-item-info">
+                <span class="shop-item-name">Clean Trail</span>
+                <span class="shop-item-desc">Reduces heat gain</span>
+            </div>
+            <div class="shop-item-right">
+                <span class="shop-item-cost">Cost: 25</span>
+                <button class="shop-buy-btn" onclick="buyItem('heat')">Buy</button>
+            </div>
+        </div>
+
+        <button class="mm-Btns" id="shop-close" onclick="closeShop()">Back</button>
+    </div>
+</div>
+    </div>
     <script type="module" src="app.js"></script>
+    <script src="minigame1.js"></script>
 </body>
 </html>
