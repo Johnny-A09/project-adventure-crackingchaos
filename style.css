@@ -182,6 +182,7 @@ img[src="/images/jessie-female.png"]{
     width: 70vw;
     font-style: normal;
     font-size: large;
+    padding:2.5vh 2.5vw;
 }
 
 .burger{
