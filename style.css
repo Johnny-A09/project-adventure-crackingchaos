@@ -193,6 +193,19 @@ img[src="/images/jessie-female.png"]{
     height:3vh;
     cursor: pointer;
 }
+.shop-icon{
+    background-color:transparent;
+    border:none;
+    justify-self: flex-end;
+    margin-right:2vw;
+    height:5vh;
+    cursor: pointer;
+}
+
+.shop-icon>img{
+    height:5vh;
+    cursor: pointer;
+}
 
 .burger>img{
     height:3vh;
@@ -403,7 +416,6 @@ img[src="/images/jessie-female.png"]{
   border-radius: 50%;
   background: #e74c3c;
   box-shadow: 0 0 6px rgba(231, 76, 60, 0.6);
-  transition: background 0.2s, box-shadow 0.2s;
 }
  
 .life-dot.lost {
@@ -441,7 +453,7 @@ img[src="/images/jessie-female.png"]{
   transition: border-color 0.15s, color 0.15s;
 }
  
-.qte-btn:hover {
+.qte-btn:hover, .qte-btn-res:hover {
   border-color: #ffd700;
   color: #ffd700;
 }
