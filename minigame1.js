@@ -5,11 +5,11 @@ window.miniGameHeatMult = 1;
 
 
 var ZONES = [
-  { pct: 0,  w: 15, color: '#e74c3c', points: -1 },
-  { pct: 15, w: 20, color: '#e67e22', points:  1 },
-  { pct: 35, w: 30, color: '#2ecc71', points:  3 },
-  { pct: 65, w: 20, color: '#e67e22', points:  1 },
-  { pct: 85, w: 15, color: '#e74c3c', points: -1 },
+  { pct: 0,  w: 27, color: '#e74c3c', points: -1 },
+  { pct: 27, w: 17, color: '#e67e22', points:  1 },
+  { pct: 44, w: 12, color: '#2ecc71', points:  3 },
+  { pct: 56, w: 17, color: '#e67e22', points:  1 },
+  { pct: 73, w: 27, color: '#e74c3c', points: -1 },
 ];
  
 var pos = 0, dir = 1, speed = 0.9;
@@ -102,7 +102,7 @@ function handleClick() {
   document.getElementById('score').textContent = Math.max(0, score);
   round++;
   document.getElementById('round-num').textContent = Math.min(round, totalRounds);
-  speed = Math.min(5.1, 10 + (round - 1) * 0.1) * window.miniGameSpeedMult;
+  speed = Math.min(5.1, 5 + (round - 1) * 0.1) * window.miniGameSpeedMult;
  
   if (lives <= 0)          { endGame(false); return; }
   if (round > totalRounds) { endGame(true);  return; }

@@ -87,7 +87,8 @@ document.querySelectorAll(".characters").forEach(btn => {
         backBtn.style = "display: none;";
         characterCheck();
         return character;
-})})
+    })
+})
 
 document.getElementById("male-slect").addEventListener("click", () =>{
     goTo("character-Select-female");
@@ -103,13 +104,19 @@ document.getElementById("male-slect1").addEventListener("click", () =>{
 })
 
 choices.forEach((btn, index) =>{
-    btn.addEventListener("click", (chosen) =>{
-    if(currentChoiceIds[index] == "start"){goTo("menu-Screen");}
-    else if(currentChoiceIds[index] == "restart"){
+    btn.addEventListener("click", () =>{
+    if(currentChoiceIds[index] == "start"){
+        goTo("menu-Screen");
+        textLogs.length = 0;
+        logContainer.replaceChildren();
+        return textLogs;
+    }else if(currentChoiceIds[index] == "restart"){
         character = character;
         characterCheck();
         goTo("game-Screen");
-        return character;
+        textLogs.length = 0;
+        logContainer.replaceChildren();
+        return character, textLogs;
     }else{
         sceneCreation(story[currentChoiceIds[index]]);
     }
@@ -117,7 +124,6 @@ choices.forEach((btn, index) =>{
 })
 
 function sceneCreation(node){
-    
     if (node.minigame === "miniGame1") {
         minigameNextNode = node.idsForChoices[0];
         goTo("miniGame1");
@@ -150,8 +156,6 @@ function characterCheck(){
             sceneCreation(story.jessieStart);
             if(gender){
                 sceneCharacter.src = "images/jessie-female.png";
-            }else{
-
             }
         break;
 
@@ -224,7 +228,6 @@ function choiceCheck(current){
         choice2.style = "display:block;";
         choice3.style = "display:none;";
     }else{
-        choice1.style = "display:block;";
         choice2.style = "display:block;";
         choice3.style = "display:block;";
     }
