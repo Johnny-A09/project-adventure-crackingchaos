@@ -77,39 +77,36 @@ html, body {
     display: flex;
     flex-direction: row;
 }
-#profile-section > button{
-    background-color:transparent;
-    border:none;
-    width:2vw;
-    min-height: min-content;
-    min-width: min-content;
+
+#gender-Menu{
+    width:54vw;
 }
 
-#profile-Picture-Container {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid #ccc;  
-    background-color: transparent;
-    border: none;
-    margin-left:2vw;
-}
-
-
-#profile-Picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+#gender{
+    width:54vw;
+    margin-top:5vh;
+    display:flex;
+    justify-content:space-around;
 }
 
 .gender-Btns {
     cursor: pointer;
     border-radius: 3.25rem;
+
 }
 
 .characters {
     height: 10vh;
-    
+    background-color: transparent;
+    border:none;
+    height: 50vh;
+}
+
+#character-Choice{
+    width:100vh;
+    display:flex;
+    justify-content: space-around;
+    margin-top:5vh;
 }
 
 img[src="/images/jessie-female.png"]{
@@ -285,6 +282,10 @@ img[src="/images/jessie-female.png"]{
     width:auto;
     justify-self: center;
     align-self: center;
+}
+
+.choose-start{
+    color:white;
 }
 
 .qte-root {
@@ -498,102 +499,3 @@ img[src="/images/jessie-female.png"]{
   margin: 8px 0 24px;
 }
 
-#shop-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60vw;
-    gap: 2vh;
-    margin-top: 4vh;
-}
-
-#shop-title {
-    font-size: 32px;
-    color: var(--universal-white);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
-#shop-wealth-display {
-    color: var(--character-Btn);
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
-.shop-item {
-    background-color: var(--mm-Btns);
-    border-radius: 16px;
-    width: 100%;
-    padding: 1.5vh 2vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--overlay);
-}
-
-.shop-item-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.shop-item-name {
-    color: var(--universal-white);
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.shop-item-desc {
-    color: #aaa;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-.shop-item-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
-.shop-item-cost {
-    color: var(--character-Btn);
-    font-size: 12px;
-}
-
-.shop-buy-btn {
-    background-color: var(--confirm);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 6px 18px;
-    font-family: "Orbitron", sans-serif;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.shop-buy-btn:disabled {
-    background-color: #444;
-    color: #888;
-    cursor: not-allowed;
-}
-
-.shop-buy-btn.owned {
-    background-color: var(--character-Btn);
-    color: #000;
-}
-
-#shop-close {
-    width: 40%;
-    height: 6vh;
-    font-size: 16px;
-}
-
-
-#shop-Screen {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    width: 100%;
-}
