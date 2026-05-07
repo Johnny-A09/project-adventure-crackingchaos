@@ -579,3 +579,6 @@ img[src="/images/jessie-female.png"]{
   margin: 8px 0 24px;
 }
 
+#miniGame1.screen.active {
+    padding-top: 7rem;
+}
