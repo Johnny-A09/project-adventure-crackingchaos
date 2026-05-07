@@ -18,6 +18,8 @@ const miniGame1 = document.getElementById("miniGame1");
 const backBtn = document.getElementById("back");
 const burger = document.getElementById("burger-icon");
 const burgerMenu = document.getElementById("burger-display");
+const shop = document.getElementById("shop-icon");
+const shopMenu = document.getElementById("shop-display");
 const logOverlay = document.getElementById("logs-overlay");
 const logContainer = document.getElementById("log-container");
 const logBtn = document.getElementById("logs");
@@ -31,6 +33,7 @@ let character = "";
 let textLogs = [];
 let currentChoiceIds = [];
 let burgerStatus = false;
+let shopStatus = false;
 let shopOwned = { slow: false, wealth: false, heat: false };
 let previousScreen = "game-Screen";
 
@@ -193,6 +196,18 @@ burger.addEventListener("click", ()=>{
         burgerMenu.style = "display:none;";
         burgerStatus = false;
         return burgerStatus;
+    }
+})
+
+shop.addEventListener("click", ()=>{
+    if(shopStatus == false){
+        shopMenu.style = "display:flex;";
+        shopStatus = true;
+        return shopStatus;
+    }else{
+        shopMenu.style = "display:none;";
+        shopStatus = false;
+        return shopStatus;
     }
 })
 
