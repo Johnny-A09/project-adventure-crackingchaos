@@ -248,3 +248,6 @@ function choiceCheck(current){
     }
 }
 
+function saveGame() {
+   
+}
