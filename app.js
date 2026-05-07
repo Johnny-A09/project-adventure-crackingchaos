@@ -25,6 +25,8 @@ const logContainer = document.getElementById("log-container");
 const logBtn = document.getElementById("logs");
 const closeLogs = document.getElementById("closer");
 const sceneCharacter = document.getElementById("scene-character");
+const saveBtn = document.getElementById("save");
+const loadBtn = document.getElementById("load-Btn")
 window.gameStats = {fame: 0, wealth: 0, heat: 0};
 const choices = [choice1, choice2, choice3];
 let position = ["menu-Screen",];
@@ -36,6 +38,9 @@ let burgerStatus = false;
 let shopStatus = false;
 let shopOwned = { slow: false, wealth: false, heat: false };
 let previousScreen = "game-Screen";
+let saveGameName;
+const storedFiles = localStorage.getItem("saveFiles");
+let saveFiles = storedFiles ? JSON.parse(storedFiles) : [];
 
 
 function goTo(screen) {
@@ -249,5 +254,64 @@ function choiceCheck(current){
 }
 
 function saveGame() {
+   saveGameName = prompt("Please name your save file:")
    
+    const saveData = {
+    character: character,
+    gender: gender,
+    textLogs: textLogs,
+    currentChoiceIds: currentChoiceIds,
+    currentSceneText: currentText.textContent,
+    currentSceneImage: sceneImg.src,
+    currentScreen: position.at(-1)
+   };
+
+   localStorage.setItem(saveGameName, JSON.stringify(saveData));
+   console.log("Save function has worked!");
+   console.log(saveFiles)
+   saveFiles.push(saveGameName);
+   localStorage.setItem("saveFiles", JSON.stringify(saveFiles));
 }
+
+saveBtn.addEventListener("click", saveGame);
+
+function loadGame() {
+    if (saveFiles.length === 0) {
+        console.log("No save files found.");
+        return;
+    }
+
+    const saveGameName = prompt(`Enter the name of your save file:\n${saveFiles.join(", ")}`);
+
+    if (!saveGameName) {
+        console.log("No save name entered.");
+        return;
+    }
+
+    const savedData = JSON.parse(localStorage.getItem(saveGameName));
+
+    if (!savedData) {
+        console.log("No save found with that name.");
+        return;
+    }
+
+    character = savedData.character;
+    gender = savedData.gender;
+    textLogs = savedData.textLogs;
+    currentChoiceIds = savedData.currentChoiceIds;
+
+    currentText.textContent = savedData.currentSceneText;
+    sceneImg.src = savedData.currentSceneImage;
+
+    logContainer.replaceChildren();
+    textLogs.forEach(log => {
+        const p = document.createElement("p");
+        p.textContent = log;
+        logContainer.appendChild(p);
+    });
+
+    goTo(savedData.currentScreen);
+    console.log("File loaded");
+}
+
+loadBtn.addEventListener("click", loadGame);
