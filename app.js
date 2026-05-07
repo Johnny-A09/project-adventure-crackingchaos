@@ -87,7 +87,8 @@ document.querySelectorAll(".characters").forEach(btn => {
         backBtn.style = "display: none;";
         characterCheck();
         return character;
-})})
+    })
+})
 
 document.getElementById("male-slect").addEventListener("click", () =>{
     goTo("character-Select-female");
@@ -103,13 +104,19 @@ document.getElementById("male-slect1").addEventListener("click", () =>{
 })
 
 choices.forEach((btn, index) =>{
-    btn.addEventListener("click", (chosen) =>{
-    if(currentChoiceIds[index] == "start"){goTo("menu-Screen");}
-    else if(currentChoiceIds[index] == "restart"){
+    btn.addEventListener("click", () =>{
+    if(currentChoiceIds[index] == "start"){
+        goTo("menu-Screen");
+        textLogs.length = 0;
+        logContainer.replaceChildren();
+        return textLogs;
+    }else if(currentChoiceIds[index] == "restart"){
         character = character;
         characterCheck();
         goTo("game-Screen");
-        return character;
+        textLogs.length = 0;
+        logContainer.replaceChildren();
+        return character, textLogs;
     }else{
         sceneCreation(story[currentChoiceIds[index]]);
     }
@@ -117,14 +124,13 @@ choices.forEach((btn, index) =>{
 })
 
 function sceneCreation(node){
-    
     if (node.minigame === "miniGame1") {
         minigameNextNode = node.idsForChoices[0];
         goTo("miniGame1");
         startGame(); 
         return;
     }
-    
+    choiceCheck(node.choice);
     choice1.textContent = node.choice.at(0);
     choice2.textContent = node.choice.at(1);
     choice3.textContent = node.choice.at(2);
@@ -150,8 +156,6 @@ function characterCheck(){
             sceneCreation(story.jessieStart);
             if(gender){
                 sceneCharacter.src = "images/jessie-female.png";
-            }else{
-
             }
         break;
 
@@ -216,44 +220,16 @@ closeLogs.addEventListener("click", ()=>{
     logOverlay.style = "display:none;";
 })
 
-document.getElementById("shop-icon").addEventListener("click", () => {
-    document.getElementById("shop-wealth-val").textContent = window.gameStats.wealth;
-    updateShopButtons();
-    document.getElementById("shop-Screen").style.display = "flex";
-});
-
-function closeShop() {
-    document.getElementById("shop-Screen").style.display = "none";
-}
-
-function updateShopButtons() {
-    for (var key in shopOwned) {
-        var btn = document.querySelector("#item-" + key + " .shop-buy-btn");
-        if (shopOwned[key]) {
-            btn.textContent = "Owned";
-            btn.classList.add("owned");
-            btn.disabled = true;
-        }
+function choiceCheck(current){
+    if(current.length === 1){
+        choice2.style = "display:none;";
+        choice3.style = "display:none;";
+    }else if(current.length === 2){
+        choice2.style = "display:block;";
+        choice3.style = "display:none;";
+    }else{
+        choice2.style = "display:block;";
+        choice3.style = "display:block;";
     }
 }
 
-function buyItem(item) {
-    var costs = { slow: 30, wealth: 20, heat: 25 };
-    var cost = costs[item];
-    if (gameStats.wealth < cost) {
-        alert("Not enough wealth!");
-        return;
-    }
-    gameStats.wealth -= cost;
-    shopOwned[item] = true;
-    document.getElementById("shop-wealth-val").textContent = gameStats.wealth;
-    updateShopButtons();
-
-    if (item === "slow")   { window.miniGameSpeedMult = 0.6; }
-    if (item === "wealth") { window.miniGameWealthMult = 2; }
-    if (item === "heat")   { window.miniGameHeatMult = 0.5; }
-}
-
-
-window.buyItem = buyItem;
-window.closeShop = closeShop;

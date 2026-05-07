@@ -19,11 +19,6 @@
         <button id="back" class="back"> 
             <img src="/images/white-arrow.png">
         </button>
-        <section id="profile-Section1">
-            <button id="profile-Picture-Container">
-                <img id="profile-Picture" src="images/pfp.png">
-            </button>
-        </section>
         <button id="male-slect" class="back-other" style="display:none;"> 
             <img src="/images/back-arrow.png">
         </button>
@@ -31,7 +26,7 @@
             <img src="/images/back-arrow.png">
         </button>
         
-        <button id="shop-icon" class="burger">
+        <button id="shop-icon" class="shop-icon">
             <img src="images/shop-icon.png" alt="shop icon">
         </button>
         <button id="burger-icon" class="burger">
@@ -60,7 +55,7 @@
         
     <!--Start of Gender Select Screen-->
     <div id="gender-Screen" class="screen">
-        <h1 id="h1-color">Choose Your Start</h1>
+        <h1 class="choose-start">Choose Your Start</h1>
         <main id="gender-Menu">
             <section id="gender">
                 <button id="male" class="gender-Btns">
@@ -76,35 +71,41 @@
 
     <!--Start of character select-->
     <div id="character-Select-male" class="screen">
-        <h1>Choose Your Start</h1>
+        <h1 class="choose-start">Choose Your Start</h1>
             <section id="character-Choice">
                 <button id="Jessie" class="characters">
                     <img src="images/jessie-male.png" alt="jessie-male">
+                    <p class="choose-start">Jessie</p>
                 </button>
 
                 <button id="alex" class="characters"> 
                     <img src="images/alex-male.png" alt="jessie-male">
+                    <p class="choose-start">Alex</p>
                 </button>
 
                 <button id="Rei" class="characters"> 
                     <img src="/images/dna.png">
+                    <p class="choose-start">Rei</p>
                 </button>
             </section>
     </div>
 
     <div id="character-Select-female" class="screen">
-        <h1>Choose Your Start</h1>
+        <h1 class="choose-start">Choose Your Start</h1>
             <section id="character-Choice">
                 <button id="Jessie-female" class="characters">
                     <img src="/images/jessie-female.png">
+                    <p class="choose-start">Jessie</p>
                 </button>
 
                 <button id="alex-female" class="characters"> 
                     <img src="/images/alex-female.png">
+                    <p class="choose-start">Alex</p>
                 </button>
 
                 <button id="Rei-female" class="characters"> 
                     <img src="/images/rei-female.png">
+                    <p class="choose-start">Rei</p>
                 </button>
 
             </section>
@@ -186,52 +187,14 @@
   <div class="qte-result-btns">
     <button class="qte-btn-res" onclick="startGame()">Try Again</button>
     <button class="qte-btn" id="continue-btn" onclick="continueStory()">Continue</button>
-  </div>
+  </div>    
 </div>
 
+    <div id="shop" style="display:none;"></div>
 
-<div id="shop-Screen" style="display:none; position:fixed; inset:0; z-index:100; flex-direction:column; align-items:center; justify-content:flex-start; min-height:100vh; width:100%; background-color: rgba(0,0,0,0.85);">
-    <div id="shop-container">
-        <h1 id="shop-title">Black Market</h1>
-        <div id="shop-wealth-display">💰 Wealth: <span id="shop-wealth-val">0</span></div>
-
-        <div class="shop-item" id="item-slow">
-            <div class="shop-item-info">
-                <span class="shop-item-name">Steady Hands</span>
-                <span class="shop-item-desc">Slows the needle speed</span>
-            </div>
-            <div class="shop-item-right">
-                <span class="shop-item-cost">Cost: 30</span>
-                <button class="shop-buy-btn" onclick="buyItem('slow')">Buy</button>
-            </div>
-        </div>
-
-        <div class="shop-item" id="item-wealth">
-            <div class="shop-item-info">
-                <span class="shop-item-name">Street Connect</span>
-                <span class="shop-item-desc">Earn more wealth per minigame</span>
-            </div>
-            <div class="shop-item-right">
-                <span class="shop-item-cost">Cost: 20</span>
-                <button class="shop-buy-btn" onclick="buyItem('wealth')">Buy</button>
-            </div>
-        </div>
-
-        <div class="shop-item" id="item-heat">
-            <div class="shop-item-info">
-                <span class="shop-item-name">Clean Trail</span>
-                <span class="shop-item-desc">Reduces heat gain</span>
-            </div>
-            <div class="shop-item-right">
-                <span class="shop-item-cost">Cost: 25</span>
-                <button class="shop-buy-btn" onclick="buyItem('heat')">Buy</button>
-            </div>
-        </div>
-
-        <button class="mm-Btns" id="shop-close" onclick="closeShop()">Back</button>
+    </div>
     </div>
 </div>
-    </div>
     <script type="module" src="app.js"></script>
     <script src="minigame1.js"></script>
 </body>
