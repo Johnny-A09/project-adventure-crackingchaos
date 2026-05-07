@@ -102,6 +102,28 @@ html, body {
     object-fit: cover;
 }
 
+
+#gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10rem;
+}
+
+
+
+#gender-Screen.screen.active {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+
+#h1-color {
+    color: var(--universal-white)
+}
+
 .gender-Btns {
     cursor: pointer;
     border-radius: 3.25rem;
