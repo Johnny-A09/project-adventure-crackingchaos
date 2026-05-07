@@ -254,8 +254,18 @@ function choiceCheck(current){
 }
 
 function saveGame() {
-   saveGameName = prompt("Please name your save file:")
-   
+   saveGameName = prompt("Please name your save file:");
+
+    const existingSave = localStorage.getItem(saveGameName);
+    if (existingSave) {
+        const conflict = prompt("A save file with that name already exists. Would you like to replace it? Type 'yes' if so.");
+        if (conflict === "yes") {
+            localStorage.removeItem(saveGameName);
+        } else {
+            alert("Save file not replaced.");
+            return; 
+        }
+    }
     const saveData = {
     character: character,
     gender: gender,
@@ -271,6 +281,8 @@ function saveGame() {
    console.log(saveFiles)
    saveFiles.push(saveGameName);
    localStorage.setItem("saveFiles", JSON.stringify(saveFiles));
+
+    
 }
 
 saveBtn.addEventListener("click", saveGame);
@@ -295,6 +307,8 @@ function loadGame() {
         return;
     }
 
+
+   
     character = savedData.character;
     gender = savedData.gender;
     textLogs = savedData.textLogs;
