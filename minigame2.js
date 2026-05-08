@@ -4,11 +4,11 @@ window.miniGameHeatMult2 = 1;
 
 
 var ZONES2 = [
-  { pct: 0,  w: 27, color: '#e74c3c', points: -1 },
-  { pct: 27, w: 17, color: '#e67e22', points:  1 },
-  { pct: 44, w: 6,  color: '#2ecc71', points:  3 },
-  { pct: 50, w: 17, color: '#e67e22', points:  1 },
-  { pct: 73, w: 27, color: '#e74c3c', points: -1 },
+  { pct: 0,  w: 28, color: '#e74c3c', points: -2 },
+  { pct: 28, w: 18, color: '#e67e22', points:  -1 },
+  { pct: 46, w: 8,  color: '#2ecc71', points:  3 },
+  { pct: 54, w: 18, color: '#e67e22', points:  -1 },
+  { pct: 72, w: 28, color: '#e74c3c', points: -2 },
 ];
 
 var pos2 = 0, dir2 = 1, speed2 = 0.9;
@@ -142,3 +142,4 @@ function continueStory2() {
 }
 
 buildTrack2();
+startGame2();

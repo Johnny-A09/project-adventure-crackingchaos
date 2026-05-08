@@ -332,8 +332,10 @@ function loadGame() {
         logContainer.appendChild(p);
     });
 
-    goTo(savedData.currentScreen);
+    goTo("game-Screen");
+    sceneCreation(savedData);
     console.log("File loaded");
+    return character, gender, textLogs, currentChoiceIds;
 }
 
 loadBtn.addEventListener("click", loadGame);
