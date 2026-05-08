@@ -4,7 +4,8 @@ export const story = {
        text: `Your name is Jessie. You grew up scrappy, always the one who figured things out when no one else would. You've been crashing on a park bench in Koreatown for three nights now, living off vending machine chips and sheer stubbornness. You pull out a crumpled twenty, your last one, and stare at it. The candy game was the only thing keeping you going. Your old supplier ghosted you after the raid, and the people who knew your product are now whispering that "Purpleman's operation is dead."\nYou overhear two street vendors arguing nearby. One of them drops a bag of contraband gummy bears and walks off furious. You eye the bag.`,
        choice: ['Pick up the bag and sell it yourself to get seed money', 'Ignore it and look for a legit part-time job to fund a fresh start', 'Follow the angry vendor , maybe he knows the underground candy market'],
        idsForChoices: ['jessieHustle', 'jessieLegit', 'jessieFollow'],
-       pictureForScene: "/scenes/korea-scene.png"
+       pictureForScene: "/scenes/korea-scene.png",
+       
     },
 
 
