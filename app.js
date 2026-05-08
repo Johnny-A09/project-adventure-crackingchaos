@@ -9,12 +9,6 @@ const gameButton = document.getElementById("game-shortcut");
 const startButton = document.getElementById("start-Btn");
 const maleButton = document.getElementById("male");
 const femaleButton = document.getElementById("female");
-const mainMenu = document.getElementById("menu-Screen");
-const genderScreen = document.getElementById("gender-Screen");
-const maleSelect = document.getElementById("character-Select-male");
-const femaleSelect = document.getElementById("character-Select-female");
-const gameScreen = document.getElementById("game-Screen");
-const miniGame1 = document.getElementById("miniGame1");
 const backBtn = document.getElementById("back");
 const burger = document.getElementById("burger-icon");
 const burgerMenu = document.getElementById("burger-display");
@@ -27,6 +21,9 @@ const closeLogs = document.getElementById("closer");
 const sceneCharacter = document.getElementById("scene-character");
 const saveBtn = document.getElementById("save");
 const loadBtn = document.getElementById("load-Btn")
+const gameContainer = document.getElementById("game-Container");
+const settingsBtn = document.getElementById("settings-Btn");
+const settingsOverlay = document.getElementById("settings-display");
 window.gameStats = {fame: 0, wealth: 0, heat: 0};
 const choices = [choice1, choice2, choice3];
 let position = ["menu-Screen",];
@@ -34,8 +31,10 @@ let gender = false;
 let character = "";
 let textLogs = [];
 let currentChoiceIds = [];
+let pastChoices = [];
 let burgerStatus = false;
 let shopStatus = false;
+let settingsStatus = false;
 let shopOwned = { slow: false, wealth: false, heat: false };
 let previousScreen = "game-Screen";
 let saveGameName;
@@ -154,8 +153,14 @@ function sceneCreation(node){
     sceneImg.src = node.pictureForScene;
     currentChoiceIds = node.idsForChoices;
     textLogs.push(node.text);
+    if(pastChoices.length != 0){
+        pastChoices.pop();
+    }
+    pastChoices.push(node.choice);
     addTextLog();
-    return currentChoiceIds, textLogs;
+    console.log(currentChoiceIds);
+    console.log(pastChoices);
+    return currentChoiceIds, textLogs, pastChoices;
 }
 
 let minigameNextNode = null;
@@ -224,6 +229,17 @@ shop.addEventListener("click", ()=>{
     }
 })
 
+settingsBtn.addEventListener ("click", ()=> {
+    if(settingsStatus == false) {
+        settingsOverlay.style = "display:flex;";
+        settingsStatus = true;
+        return settingsStatus;
+    } else {
+        settingsOverlay.style = "display:none;"
+        settingsStatus = false;
+        return settingsStatus;
+    }
+})
 function addTextLog(){
     const loggedText = document.createElement('p');
     textLogCheck(loggedText);
@@ -242,10 +258,14 @@ function textLogCheck(newText){
 
 logBtn.addEventListener("click", ()=>{
     logOverlay.style = "display:flex;";
+    gameContainer.style.opacity = "0.5";
+    burgerMenu.style.opacity = "0.5"
 })
 
 closeLogs.addEventListener("click", ()=>{
     logOverlay.style = "display:none;";
+    gameContainer.style.opacity = "1";
+    burgerMenu.style.opacity = "1";
 })
 
 function choiceCheck(current){
@@ -264,16 +284,20 @@ function choiceCheck(current){
 function saveGame() {
    saveGameName = prompt("Please name your save file:");
 
-    const existingSave = localStorage.getItem(saveGameName);
+    const existingSave = localStorage.getItem(saveGameName.toLowerCase());
     if (existingSave) {
         const conflict = prompt("A save file with that name already exists. Would you like to replace it? Type 'yes' if so.");
-        if (conflict === "yes") {
+        if (conflict.toLowerCase() === "yes") {
             localStorage.removeItem(saveGameName);
-        } else {
+        }else{
             alert("Save file not replaced.");
             return; 
         }
     }
+    if(saveGameName === ""){
+        alert("Invalid Entry");
+        return;
+    } 
     const saveData = {
     character: character,
     gender: gender,
@@ -281,7 +305,8 @@ function saveGame() {
     currentChoiceIds: currentChoiceIds,
     currentSceneText: currentText.textContent,
     currentSceneImage: sceneImg.src,
-    currentScreen: position.at(-1)
+    currentScreen: position.at(-1),
+    pastChoices: pastChoices
    };
 
    localStorage.setItem(saveGameName, JSON.stringify(saveData));
@@ -329,13 +354,29 @@ function loadGame() {
     textLogs.forEach(log => {
         const p = document.createElement("p");
         p.textContent = log;
+        p.style.color ="white";
         logContainer.appendChild(p);
     });
 
     goTo("game-Screen");
-    sceneCreation(savedData);
+    choiceCheck(savedData.currentChoiceIds);
+    choice1.textContent = savedData.pastChoices.at(0);
+    choice2.textContent = savedData.pastChoices.at(1);
+    choice3.textContent = savedData.pastChoices.at(2);
     console.log("File loaded");
     return character, gender, textLogs, currentChoiceIds;
 }
 
 loadBtn.addEventListener("click", loadGame);
+
+
+function clearFiles() {
+    let confirm = prompt("Are you sure you want delete ALL save files? If you would like to proceed, please type 'confirm'")
+    if (confirm.toLowerCase === "confirm") {
+        localStorage.clear();
+    }
+    else {
+        alert("Save files not cleared");
+    }
+};
+

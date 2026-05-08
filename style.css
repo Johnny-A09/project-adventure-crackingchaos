@@ -274,6 +274,21 @@ img[src="/images/jessie-female.png"]{
 }
 
 
+.settings-cont{
+  height:35vh;
+  width:25vw;
+  background-color:var(--overlay);
+  flex-direction: row;
+  justify-content:space-around;
+  align-items:center;
+  position:fixed;
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 2%;
+
+  
+}
+
 #items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
