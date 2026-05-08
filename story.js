@@ -62,7 +62,7 @@ export const story = {
         text: `he store owner, Mr. Castillo, is 60-something and has seen everything. Over a Jarritos he tells you the SGA has been expanding, more raids, more plainclothes agents in East LA. But he also says the demand for unlicensed candy has never been higher. "The kids," he says, shaking his head. "They want what they can't have."\nHe slides you a name on a receipt: someone who might need a new supplier contact. It's a long shot, but it's a thread.`,
         choice: ['Folllow up on the name', 'Thank him and plan your next move independently'],
         idsForChoices: ['alexNetwork', 'alexCousin'],
-        pictureForScene: "/scenes/alexStartOwner.png"
+        pictureForScene: "/scenes/alexStoreOwner.png"
     },
 
 
