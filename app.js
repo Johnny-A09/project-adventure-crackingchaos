@@ -138,6 +138,14 @@ function sceneCreation(node){
         startGame(); 
         return;
     }
+
+    if (node.minigame === "miniGame2") {
+        minigameNextNode = node.idsForChoices[0];
+        goTo("miniGame2");
+        startGame(); 
+        return;
+    }
+
     choiceCheck(node.choice);
     choice1.textContent = node.choice.at(0);
     choice2.textContent = node.choice.at(1);

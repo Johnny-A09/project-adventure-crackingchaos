@@ -6,9 +6,9 @@ window.miniGameHeatMult = 1;
 
 var ZONES = [
   { pct: 0,  w: 27, color: '#e74c3c', points: -1 },
-  { pct: 27, w: 17, color: '#e67e22', points:  1 },
+  { pct: 27, w: 17, color: '#e67e22', points:  0 },
   { pct: 44, w: 12, color: '#2ecc71', points:  3 },
-  { pct: 56, w: 17, color: '#e67e22', points:  1 },
+  { pct: 56, w: 17, color: '#e67e22', points:  0 },
   { pct: 73, w: 27, color: '#e74c3c', points: -1 },
 ];
  

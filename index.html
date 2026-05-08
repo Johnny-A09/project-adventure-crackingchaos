@@ -204,8 +204,55 @@
 
     </div>
     </div>
+
+
+    <!-- Replace your existing miniGame2 div with this -->
+
+<div id="miniGame2" class="screen">
+    <div class="qte-root" id="root2">
+        <div class="hit-flash" id="flash2"></div>
+        <div class="qte-content">
+
+            <div class="score-row">
+                <div class="stat-block">
+                    <div class="stat-label">Score</div>
+                    <div class="stat-val" id="score2">0</div>
+                </div>
+                <div class="lives-row" id="lives-row2"></div>
+                <div class="stat-block">
+                    <div class="stat-label">Round</div>
+                    <div class="stat-val" id="round-num2">1</div>
+                </div>
+            </div>
+
+            <div class="track-wrap">
+                <div class="track-bg" id="track-bg2"></div>
+                <div class="needle" id="needle2"></div>
+            </div>
+
+            <div class="feedback" id="feedback2">&nbsp;</div>
+
+            <div class="btn-row">
+                <button class="qte-btn" id="main-btn2" onclick="handleClick2()">Click!</button>
+            </div>
+        </div>
+
+        <div class="result-overlay" id="result-overlay2" style="display:none">
+            <div class="result-title" id="result-title2"></div>
+            <div class="result-sub" id="result-sub2"></div>
+            <div class="qte-result-btns">
+                <button class="qte-btn-res" onclick="startGame2()">Try Again</button>
+                <button class="qte-btn" id="continue-btn2" onclick="continueStory2()">Continue</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 </div>
     <script type="module" src="app.js"></script>
     <script src="minigame1.js"></script>
+    <script src="minigame2.js"></script>
 </body>
 </html>

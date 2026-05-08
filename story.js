@@ -272,7 +272,7 @@ export const story = {
     text: `[MINIGAME: PRODUCTION SPEED] You go all in. The operation runs at maximum capacity, longer hours, larger batches, more distribution routes. The money comes in fast. Cord is pleased. William is exhausted but driven by the medical bills piling up.\nYour product transcends the local market. It hits underground networks up and down the West Coast. Purleman's candy is a name people know without knowing who's behind it. You're generating more revenue in a week than you used to make in a month.\nBut Division 7 of the SGA has been watching your distribution trail for weeks.`,
     choice: ['Continue at full speed, the money is too good', 'Recognize the danger and dial back production'],
     idsForChoices: ['fastFullSpeed', 'fastDialBack'],
-    minigame: 'production',
+    minigame: 'miniGame2',
     pictureForScene: "/scenes/fastPath.png"
     },
 
