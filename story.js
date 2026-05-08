@@ -2,7 +2,7 @@ export const story = {
    
     jessieStart: {
        text: `Your name is Jessie. You grew up scrappy, always the one who figured things out when no one else would. You've been crashing on a park bench in Koreatown for three nights now, living off vending machine chips and sheer stubbornness. You pull out a crumpled twenty, your last one, and stare at it. The candy game was the only thing keeping you going. Your old supplier ghosted you after the raid, and the people who knew your product are now whispering that "Purpleman's operation is dead."\nYou overhear two street vendors arguing nearby. One of them drops a bag of contraband gummy bears and walks off furious. You eye the bag.`,
-       choice: ['Pick up the bag and sell it yourself to get seed money', 'Ignore it and look for a legit part-time job to fund a fresh start', 'Follow the angry vendor -- maybe he knows the underground candy market'],
+       choice: ['Pick up the bag and sell it yourself to get seed money', 'Ignore it and look for a legit part-time job to fund a fresh start', 'Follow the angry vendor , maybe he knows the underground candy market'],
        idsForChoices: ['jessieHustle', 'jessieLegit', 'jessieFollow'],
        pictureForScene: "/scenes/korea-scene.png"
     },
@@ -10,7 +10,7 @@ export const story = {
 
     jessieHustle: {
         text: `You scoop the bag and spend the afternoon working the park near the Staples Center. You've got the pitch down, you always did. By sundown you've tripled your twenty. It's not enough to restart a real operation, but it's proof you still have the gift. You're heading back to your bench when you pass an alley and smell something familiar, sugar, citric acid, the sharp pop of carbon dioxide candy. Someone nearby is still cooking.\nYou slow your steps. This could be a connect, or a competitor.`,
-        choice: ['Invesitgate the smell', 'Keep walking -- stay off the radar for now'],
+        choice: ['Invesitgate the smell', 'Keep walking , stay off the radar for now'],
         idsForChoices: ['jessieAlley', 'jessieLayLow'],
         pictureForScene: "/scenes/alley-scene.png"
     },
@@ -27,7 +27,7 @@ export const story = {
 
     jessieFollow: {
         text: `You tail the vendor six blocks into a strip mall parking lot. He meets with two others and they exchange cash for a duffel bag. You watch long enough to realize this isn't your league, not yet. But as you turn to leave, a woman locks eyes with you. She's mid-40s, sharp, with the kind of stillness that comes from years of knowing when to move and when not to. She says one thing: "You're Purpleman's, aren't you. The one that got away."\nShe walks off before you can respond. But she drops a napkin with an address.`,
-        choice: ['Go to the address', 'Throw it away -- strangers with information are dangerous'],
+        choice: ['Go to the address', 'Throw it away , strangers with information are dangerous'],
         idsForChoices: ['jessieAlley', 'jessieLayLow'],
         pictureForScene: "/scenes/popeys-scene.png"
     },
@@ -52,7 +52,7 @@ export const story = {
 
     alexStart: {
         text: `Your name is Alex. You've always moved between worlds without belonging to any of them, which made you the crew's best front person. Charm, fluency in three languages, and a face nobody forgets. When the SGA hit the house, you were the last one out the back window. You landed on your feet. You always do.\nNow you're in Boyle Heights, sleeping on a cousin's couch, too proud to explain why you showed up with nothing. Your cousin asks no questions. The neighborhood, though, it knows things. The corner store owner keeps giving you looks. The kids on the block stop talking when you pass.`,
-        choice: ['Ask the corner store owner what he knows', 'Keep your head down at your cousin\'s and plan your next move', 'Work the neighborhood -- introduce yourself, make connections'],
+        choice: ['Ask the corner store owner what he knows', 'Keep your head down at your cousin\'s and plan your next move', 'Work the neighborhood , introduce yourself, make connections'],
         idsForChoices: ['alexStoreOwner', 'alexCousin', 'alexNetwork'],
         pictureForScene: "/scenes/alexStart.png"
     },
@@ -356,7 +356,7 @@ export const story = {
     text: `You look at William. You look at your cramped makeshift lab. You look at your hands, stained with citric acid and the weight of all these close calls. And then you take a long, slow breath.\n"I'm going to get a job," you say.\nWilliam blinks. "A job."\n"At Sooubway."\nThe silence between you is enormous. Then William nods, very slowly, with the quiet dignity of a man who has seen much and judges nothing.\nYou walk into the Sooubway on Figueroa Street the next morning. You are hired on the spot. You make sandwiches. You are excellent at making sandwiches. Nobody raids you. Nobody threatens you. William visits on Thursdays and orders a twelve-inch with extra pickles.\nYou are, for the first time in a long time, at peace.\n✦ SECRET ENDING: THE SOOUBWAY CHRONICLES ✦\nYou chose the honest path. Not the most glamorous. Not the most profitable. But yours.`,
     choice: ['Play again'],
     idsForChoices: ['restart'],
-    pictureForScene: "/scenes/sooubwayEnd",
+    pictureForScene: "/scenes/sooubwayEnd.png",
     ending: 'secret'
     },
 
