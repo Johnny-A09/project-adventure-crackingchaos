@@ -54,7 +54,7 @@ export const story = {
         text: `Your name is Alex. You've always moved between worlds without belonging to any of them, which made you the crew's best front person. Charm, fluency in three languages, and a face nobody forgets. When the SGA hit the house, you were the last one out the back window. You landed on your feet. You always do.\nNow you're in Boyle Heights, sleeping on a cousin's couch, too proud to explain why you showed up with nothing. Your cousin asks no questions. The neighborhood, though, it knows things. The corner store owner keeps giving you looks. The kids on the block stop talking when you pass.`,
         choice: ['Ask the corner store owner what he knows', 'Keep your head down at your cousin\'s and plan your next move', 'Work the neighborhood -- introduce yourself, make connections'],
         idsForChoices: ['alexStoreOwner', 'alexCousin', 'alexNetwork'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/alexStart.png"
     },
 
 
@@ -62,7 +62,7 @@ export const story = {
         text: `he store owner, Mr. Castillo, is 60-something and has seen everything. Over a Jarritos he tells you the SGA has been expanding, more raids, more plainclothes agents in East LA. But he also says the demand for unlicensed candy has never been higher. "The kids," he says, shaking his head. "They want what they can't have."\nHe slides you a name on a receipt: someone who might need a new supplier contact. It's a long shot, but it's a thread.`,
         choice: ['Folllow up on the name', 'Thank him and plan your next move independently'],
         idsForChoices: ['alexNetwork', 'alexCousin'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/alexStartOwner.png"
     },
 
 
@@ -70,7 +70,7 @@ export const story = {
         text: `You spend three days on your cousin's couch, filling notebooks with plans. Supply chain. Distribution routes. Safe house requirements. You've done this before, but smarter this time. By day four you have a blueprint for a lean operation. Small, quiet, profitable.\nThe only thing missing is a production partner. You can source and sell, you always could. But the cooking? That was always someone else's lane.`,
         choice: ['Try to cook solo anyway', 'Reach out through the neighborhood for a connect'],
         idsForChoices: ['alexNetwork', 'soloGrind'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/alexCousin.png"
     },
 
 
@@ -78,7 +78,7 @@ export const story = {
         text: `You spend a week reintroducing yourself to the neighborhood ecosystem. Not as a candy vendor, just as someone who's around, who listens, who helps where they can. You fix a lady's phone. You translate at a lease signing. You play dominoes with the old men at the park.\nBy the end of the week, three different people have quietly asked if Purpleman's product is coming back. The market is waiting. You just need to supply it.\nTime to cook, or find someone who can.`,
         choice: ['Start a small solo operation'],
         idsForChoices: ['soloGrind'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/alexNetwork.png"
     },
 
     //Rei story pathway
@@ -86,7 +86,7 @@ export const story = {
         text: `Your name is Rei. You were always the technical one, the one who perfected the recipes, calibrated the temperatures, tracked the batch quality. When the SGA hit, you were in the middle of a cook. You barely grabbed your notebook before running. That notebook, filled with formulas, ratios, and notes in the margins, is the only thing you have left.\nYou've found a temporary room in a hostel in Silver Lake. It's clean and anonymous. You sit on the bed and open the notebook. You could recreate everything. Better, even. But without the crew, without the resources, you're a brain with no body.`,
         choice: ['Post on underground forums for collaborators', 'Try to source ingredients and cook a small test batch alone', 'Reach out to your old ingredient supplier'],
         idsForChoices: ['reiForum', 'reiCook', 'reiSupplier'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/reiStart.png"
     },
 
 
@@ -94,7 +94,7 @@ export const story = {
        text: `You find a niche forum on the dark corners of the web where unlicensed food producers share knowledge. You post carefully, vague enough to not expose yourself, specific enough to attract real talent. Within 48 hours you get three responses. Two are junk. One is from someone who calls themselves "W.B.B." who says they have culinary training and are looking for a technical partner.\nYou file it away for now. Something about the tone feels serious.`,
          choice: ['Reply to W.B.B.', 'Try producing a test batch on your own first'],
         idsForChoices: ['reiCook', 'soloGrind'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/reiForum.png"
     },
 
 
@@ -102,7 +102,7 @@ export const story = {
         text: `You contact your old ingredient supplier through an encrypted message. He's nervous, the SGA crackdown spooked a lot of people. But he confirms he can still source what you need, at a premium. He also mentions that someone else has been asking about high-grade candy ingredients in the area. A teacher, apparently. Culinary background.\nA teacher. That's an odd detail that sticks with you.`,
         choice: ['Ask more about the teacher', 'Order supplies and start a solo test batch'],
         idsForChoices: ['reiCook', 'soloGrind'],
-        pictureForScene: ""
+        pictureForScene: "/scenes/reiSupplier.png"
     },
 
 
@@ -247,7 +247,7 @@ export const story = {
     text: `You choose patience. Small batches, careful movement, no flashiness. Cord is mildly annoyed but respects consistency. Over several months, the operation grows quietly. Your product's reputation continues to build, quality over quantity. William's health improves as your income stabilizes and he can afford his treatments.\nBut nothing stays quiet forever. A new SGA task force, Division 7, has been assembled specifically to target unlicensed candy operations of your profile. They've been building a case for months.\nYou don't know it yet, but they know exactly where you are.`,
     choice: ['Continue the operation', 'Trust your instincts, something feels off'],
     idsForChoices: ['sgaClosing', 'slowParanoia'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/slowPath.png"
      },
 
 
@@ -256,7 +256,7 @@ export const story = {
     text: `You voice your concern to William. He thinks you're being paranoid, things have been good. But you listen to your gut and do an audit: you check for surveillance, vary your routes, stop using the same ingredient supplier. It buys you time.\nThree weeks later, you see the van parked two blocks from your location. Same spot. Two days in a row. Your instinct was right.\nNow you have a head start, barely. You have to decide what to do with it.`,
     choice: ['Shut everything down and go dark', 'Run with what you have and flee', 'Tip off Cord and let him handle it'],
     idsForChoices: ['sgaShutdown', 'escapeEnding', 'cordBetrayal'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/slowParanoia.png"
     },
 
 
@@ -264,7 +264,7 @@ export const story = {
     text: `Division 7 moves in on a Wednesday morning. They don't announce it. They just appear, vans from three directions, agents in plainclothes and uniform. You and William are mid-production when William sees them through a window and says, very quietly: "It's over."\nYou have maybe 90 seconds.`,
     choice: ['Grab the notebooks and run', 'Surrender, you\'re too tired to run', 'Try to destroy evidence and stall'],
     idsForChoices: ['escapeEnding', 'surrenderEnding', 'stallSga'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/sgaClosing.png"
     },
 
 
@@ -273,7 +273,7 @@ export const story = {
     choice: ['Continue at full speed, the money is too good', 'Recognize the danger and dial back production'],
     idsForChoices: ['fastFullSpeed', 'fastDialBack'],
     minigame: 'production',
-    pictureForScene: ""
+    pictureForScene: "/scenes/fastPath.png"
     },
 
 
@@ -281,7 +281,7 @@ export const story = {
     text: `You push harder. Cord pushes you harder. The numbers are intoxicating. William stops sleeping. You stop sleeping. The operation feels invincible because it's never been bigger.\nThen a distribution runner gets picked up by Division 7. Under pressure, he gives up a location. SGA raids it within hours. They find evidence pointing directly to your main facility. You have less than 12 hours before they arrive.\nCord calls you before the agents do. "Clean it out or burn it down. I'm gone either way." Then nothing.`,
     choice: ['Try to evacuate and flee', 'Burn the evidence, high risk, last stand', 'Give yourself up before they come to you'],
     idsForChoices: ['escapeEnding', 'burnEnding', 'surrenderEnding'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/fastFullSpeed.png"
     },
 
 
@@ -289,7 +289,7 @@ export const story = {
     text: `You tell Cord you're reducing pace. He's furious, but not dangerous-furious, he's invested in the operation and won't cut it off over a slowdown. You and William halve production for three weeks. Division 7 loses your distribution thread in the noise.\nYou've bought time. But the momentum you had is gone, and Cord is watching you more carefully now. The slow burn is back, but now you're doing it with someone who doesn't fully trust you.`,
     choice: ['Rebuild trust with Cord and continue', 'Use this lull to start planning your exit'],
     idsForChoices: ['sgaClosing', 'planEscape'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/fastDialBack.png"
     },
 
 
@@ -306,7 +306,7 @@ export const story = {
     text: `You initiate a controlled shutdown. You and William dismantle the operation piece by piece over 72 hours. Equipment is sold. Supplies are distributed. The location is cleaned. By the time Division 7 gets a warrant, there's nothing to find.\nYou've escaped, barely and quietly. William is safe. You're free. You've lost Cord's operation, but you've kept your lives and your freedom.\nLos Angeles is still out there. Smaller cities aren't. You make a choice about where to go next.`,
     choice: ['Disappear into a new life, take the escape ending', 'Go back to Los Angeles and rebuild from scratch'],
     idsForChoices: ['escapeEnding', 'fameRebuild'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/sgaShutDown.png"
     },
 
 
