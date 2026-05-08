@@ -306,7 +306,7 @@ export const story = {
     text: `You initiate a controlled shutdown. You and William dismantle the operation piece by piece over 72 hours. Equipment is sold. Supplies are distributed. The location is cleaned. By the time Division 7 gets a warrant, there's nothing to find.\nYou've escaped, barely and quietly. William is safe. You're free. You've lost Cord's operation, but you've kept your lives and your freedom.\nLos Angeles is still out there. Smaller cities aren't. You make a choice about where to go next.`,
     choice: ['Disappear into a new life, take the escape ending', 'Go back to Los Angeles and rebuild from scratch'],
     idsForChoices: ['escapeEnding', 'fameRebuild'],
-    pictureForScene: "/scenes/sgaShutDown.png"
+    pictureForScene: "/scenes/sgaShutDown.png" //still needs a scene
     },
 
 
@@ -324,7 +324,7 @@ export const story = {
     text: `You shred documents, smash equipment, run water over everything you can. William buys time at the front door, claiming to be a confused homeowner. It gives you three minutes.\nBut three minutes isn't enough. An agent finds the residue. Finds your notebook, or a piece of it. It's enough to hold you. William is detained. You're detained.\nIn the interrogation room, a deal is quietly placed on the table.`,
     choice: ['Take the deal, cooperate with SGA', 'Refuse the deal and say nothing'],
     idsForChoices: ['surrenderEnding', 'deathSilence'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/stallSga.png"
     },
 
 
@@ -332,7 +332,7 @@ export const story = {
     text: `You say nothing. You know enough people in enough bad situations to know that cooperating doesn't always end the way they promise. You sit in silence through every session. Your lawyer, appointed, overworked, tells you they have enough to convict.\nCord's people send a message through a third party: if you talk, they'll make sure the consequences go beyond legal.\nThe pressure from all sides becomes a wall. You stop sleeping. You stop eating. The operation, the dream, the candy, it all feels very far away now.`,
     choice: ['Hold on, there has to be a way out', 'Accept the weight of it all'],
     idsForChoices: ['deathEnding', 'deathEnding'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/deathSilence.png"
     },
 
 
@@ -340,7 +340,7 @@ export const story = {
     text: `You set fire to the main facility. It goes up faster than you expected. You and William run. The blaze draws every SGA agent in the area and buys you thirty minutes of chaos.\nBut the fire also takes everything. Your notebook. Your equipment. William's medical supplies. You're running with nothing but each other.\nIn the chaos, a burning beam falls. You don't see it in time.`,
     choice: ['Try to dodge', 'Push William clear'],
     idsForChoices: ['deathEnding', 'deathEnding'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/burnEnding.png"
     },
 
 
@@ -348,7 +348,7 @@ export const story = {
     text: `You return to Los Angeles a ghost. No one knows you're back. You build for six months in total silence, new identity, new contacts, new location. But the product is unmistakable. People recognize the quality before they recognize the name.\nThen a journalist writing about the underground food economy discovers a lead. She's not SGA. She's not Cord. She's someone who wants to tell the story of the best unlicensed candy operation the city has ever seen.\nYou meet her in a diner. She slides a recorder across the table and says, "Tell me everything."`,
     choice: ['Tell her everything, go public', 'Walk out of the diner'],
     idsForChoices: ['fameEnding', 'escapeEnding'],
-    pictureForScene: ""
+    pictureForScene: "/scenes/fameRebuild.png"
     },
 
 
@@ -356,7 +356,7 @@ export const story = {
     text: `You look at William. You look at your cramped makeshift lab. You look at your hands, stained with citric acid and the weight of all these close calls. And then you take a long, slow breath.\n"I'm going to get a job," you say.\nWilliam blinks. "A job."\n"At Sooubway."\nThe silence between you is enormous. Then William nods, very slowly, with the quiet dignity of a man who has seen much and judges nothing.\nYou walk into the Sooubway on Figueroa Street the next morning. You are hired on the spot. You make sandwiches. You are excellent at making sandwiches. Nobody raids you. Nobody threatens you. William visits on Thursdays and orders a twelve-inch with extra pickles.\nYou are, for the first time in a long time, at peace.\n✦ SECRET ENDING: THE SOOUBWAY CHRONICLES ✦\nYou chose the honest path. Not the most glamorous. Not the most profitable. But yours.`,
     choice: ['Play again'],
     idsForChoices: ['restart'],
-    pictureForScene: "",
+    pictureForScene: "/scenes/sooubwayEnd",
     ending: 'secret'
     },
 
