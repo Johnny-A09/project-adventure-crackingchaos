@@ -278,7 +278,7 @@ img[src="/images/jessie-female.png"]{
   height:35vh;
   width:25vw;
   background-color:var(--overlay);
-  flex-direction: row;
+  flex-direction: column;
   justify-content:space-around;
   align-items:center;
   position:fixed;
@@ -599,10 +599,34 @@ img[src="/images/jessie-female.png"]{
 
 }
 
+#close-settings{
+    background-color: var(--deny);
+    border:none;
+    margin-bottom:2vh;
+    width:10vh;
+    height:5vh;
+    align-self:center;
+    border-radius:25px;
+    cursor: pointer;
+}
+
+
+#clear-Btn {
+background-color: var(--deny);
+    border:none;
+    margin-bottom:2vh;
+    width:12vw;
+    height:5vh;
+    align-self:center;
+    border-radius:25px;
+    cursor: pointer;
+}
 
 #root2.qte-root {
     animation: spinGame 2s linear infinite;
 }
+
+
 
 
 @keyframes spinGame {

@@ -44,7 +44,7 @@
             </div>
             <div id="main-Menu-Btns">
                 <button id="start-Btn" class="mm-Btns">Start</button>
-                <button id="settings-Btn" class="mm-Btns">Settings</button>
+                <button id="settings-Btn" class="mm-Btns settings">Settings</button>
                 <button id="load-Btn" class="mm-Btns">Load</button>
             </div>
         </main>
@@ -141,7 +141,14 @@
         <div id="header"><h1>The Chaos Shop</h1> <p id="wealth-val"></p></div>
         <main id="shop-Contents">
             <section id="items">
-            <img src="/images/quicktime.png" class="shop-items"> <div id="name-price"><label>Quicktime upgrade</label><button class="buy-btn">$41</button></div>
+            <img src="/images/quicktime.png" class="shop-items"> <div class="name-price"><label>Quicktime upgrade</label><button class="buy-btn">$41</button></div>
+
+            <img src="#" class="shop-items">
+                <div class="name-price"> 
+                    <label>Wealth Multiplier</label>
+                <label id="mult-level-label">Level: 0 / 5</label>
+                <button class="buy-btn" id="wealth-mult-btn">$100</button>
+                </div>
             </section>
             
         </main>
@@ -149,8 +156,13 @@
 
 
     <div id="settings-display" class="settings-cont" style="display:none;">
+        <h1>Settings</h1>
         <button id="clear-Btn">
-            <button id="close-settings">
+            Erase Game Files
+        </button>
+
+        <button id="close-settings"> 
+            Close
         </button>
     </div>
 
@@ -201,13 +213,8 @@
     <button class="qte-btn" id="continue-btn" onclick="continueStory()">Continue</button>
   </div>    
 </div>
-
-    <div id="shop" style="display:none;"></div>
-
-    </div>
-    </div>
-
-
+</div>
+</div>
 
 <div id="miniGame2" class="screen">
     <div class="qte-root" id="root2">
@@ -249,6 +256,8 @@
 
     </div>
 </div>
+</div>
+
 
 
 </div>

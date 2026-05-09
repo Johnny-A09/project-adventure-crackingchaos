@@ -5,21 +5,21 @@ window.miniGameHeatMult = 1;
 
 
 var ZONES = [
-  { pct: 0,  w: 27, color: '#e74c3c', points: -1 },
-  { pct: 27, w: 17, color: '#e67e22', points:  0 },
+  { pct: 0,  w: 27, color: '#e74c3c', points: -2 }, //zones for diffrent colors that are linked to different points
+  { pct: 27, w: 17, color: '#e67e22', points:  -1 },
   { pct: 44, w: 12, color: '#2ecc71', points:  3 },
-  { pct: 56, w: 17, color: '#e67e22', points:  0 },
-  { pct: 73, w: 27, color: '#e74c3c', points: -1 },
+  { pct: 56, w: 17, color: '#e67e22', points:  -1 },
+  { pct: 73, w: 27, color: '#e74c3c', points: -2 },
 ];
  
-var pos = 0, dir = 1, speed = 0.9;
+var pos = 0, dir = 1, speed = 0.9; // set up th eposition of the needle, direction of travel (it will travel left due to "1") finally the needle speed 
 var raf, flashTimeout;
 var score = 0, lives = 3, round = 1;
 var totalRounds = 5;
-var gameActive = false;
+var gameActive = false; // will prevent user input while game is not active
  
 function buildTrack() {
-  var bg = document.getElementById('track-bg');
+  var bg = document.getElementById('track-bg'); // this function builds the javascript code into the actual element 
   bg.innerHTML = '';
   for (var i = 0; i < ZONES.length; i++) {
     var z = ZONES[i];
@@ -32,18 +32,18 @@ function buildTrack() {
   }
 }
  
-function buildLives() {
+function buildLives() { // this function will build the lives system
   var row = document.getElementById('lives-row');
   row.innerHTML = '';
   for (var i = 0; i < 3; i++) {
     var d = document.createElement('div');
     d.className = 'life-dot' + (i >= lives ? ' lost' : '');
-    d.id = 'life-' + i;
+    d.id = 'life-' + i; // grey out a live when player hits the read
     row.appendChild(d);
   }
 }
  
-function startGame() {
+function startGame() { // intialize the game by resetting states and is triggered from the player choice path
   score = 0; lives = 3; round = 1;
   pos = 0; dir = 1; speed = 5;
   gameActive = true;
@@ -52,11 +52,11 @@ function startGame() {
   document.getElementById('round-num').textContent = '1';
   document.getElementById('feedback').innerHTML = '&nbsp;';
   buildLives();
-  cancelAnimationFrame(raf);
+  cancelAnimationFrame(raf); // cancel the loop of the needle before intializing the a new game
   loop();
 }
  
-function loop() {
+function loop() { // the function for the core functionality of the neddle movement
   pos += dir * speed;
   if (pos >= 100) { pos = 100; dir = -1; }
   if (pos <= 0)   { pos = 0;   dir =  1; }
@@ -121,7 +121,7 @@ function endGame(survived) {
   ov.style.display = 'flex';
 
   if (survived) {
-    rt.textContent = 'YOU MADE IT';
+    rt.textContent = 'Batch successfully made';
     rt.style.color = '#ffd700';
     gameStats.wealth += Math.floor(score * window.miniGameWealthMult);
     rs.textContent = 'Final score: ' + Math.max(0, score);
