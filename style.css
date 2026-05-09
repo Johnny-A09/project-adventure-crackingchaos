@@ -648,7 +648,7 @@ background-color: var(--deny);
     }
     80% {
       transform: rotate(288deg);
-      color: rgb(80, 0, 255);
+      
     }
     100% {
       transform: rotate(360deg);
