@@ -23,7 +23,11 @@ const saveBtn = document.getElementById("save");
 const loadBtn = document.getElementById("load-Btn")
 const gameContainer = document.getElementById("game-Container");
 const settingsBtn = document.getElementById("settings-Btn");
+const settingsBtn1 = document.getElementById("settings");
 const settingsOverlay = document.getElementById("settings-display");
+const closeSettings = document.getElementById("close-settings");
+const eraseBtn = document.getElementById("clear-Btn");
+
 window.gameStats = {fame: 0, wealth: 0, heat: 0};
 const choices = [choice1, choice2, choice3];
 let position = ["menu-Screen",];
@@ -35,12 +39,18 @@ let pastChoices = [];
 let burgerStatus = false;
 let shopStatus = false;
 let settingsStatus = false;
-let shopOwned = { slow: false, wealth: false, heat: false };
 let previousScreen = "game-Screen";
 let saveGameName;
 const storedFiles = localStorage.getItem("saveFiles");
 let saveFiles = storedFiles ? JSON.parse(storedFiles) : [];
 
+let wealthMultiplier = 0;
+const maxPurchase = 5;
+const multiplierCost = 100;
+const multiplierIncrease = 0.05;
+
+const wealthCount = document.getElementById("wealth-val");
+const multiplierBtn = document.querySelector('#wealth-mult-btn');
 
 function goTo(screen) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -153,14 +163,18 @@ function sceneCreation(node){
     sceneImg.src = node.pictureForScene;
     currentChoiceIds = node.idsForChoices;
     textLogs.push(node.text);
-    if(pastChoices.length != 0){
+    do{
         pastChoices.pop();
-    }
-    pastChoices.push(node.choice);
+    }while(pastChoices.length != 0);
+    pastChoices.push(node.choice.at(0));
+    pastChoices.push(node.choice.at(1));
+    pastChoices.push(node.choice.at(2));
     addTextLog();
     console.log(currentChoiceIds);
     console.log(pastChoices);
-    return currentChoiceIds, textLogs, pastChoices;
+    statsCheck(node);
+    console.log(gameStats);
+    return currentChoiceIds, textLogs, pastChoices, gameStats;
 }
 
 let minigameNextNode = null;
@@ -221,6 +235,7 @@ shop.addEventListener("click", ()=>{
     if(shopStatus == false){
         shopMenu.style = "display:flex;";
         shopStatus = true;
+        shopWealth();
         return shopStatus;
     }else{
         shopMenu.style = "display:none;";
@@ -230,6 +245,13 @@ shop.addEventListener("click", ()=>{
 })
 
 settingsBtn.addEventListener ("click", ()=> {
+    settingDoer()
+})
+settingsBtn1.addEventListener ("click", ()=> {
+    settingDoer()
+})
+    
+function settingDoer(){
     if(settingsStatus == false) {
         settingsOverlay.style = "display:flex;";
         settingsStatus = true;
@@ -239,7 +261,8 @@ settingsBtn.addEventListener ("click", ()=> {
         settingsStatus = false;
         return settingsStatus;
     }
-})
+}
+
 function addTextLog(){
     const loggedText = document.createElement('p');
     textLogCheck(loggedText);
@@ -282,7 +305,7 @@ function choiceCheck(current){
 }
 
 function saveGame() {
-   saveGameName = prompt("Please name your save file:");
+   const saveGameName = prompt("Please name your save file:");
 
     const existingSave = localStorage.getItem(saveGameName.toLowerCase());
     if (existingSave) {
@@ -294,7 +317,7 @@ function saveGame() {
             return; 
         }
     }
-    if(saveGameName === ""){
+    if(!saveGameName){
         alert("Invalid Entry");
         return;
     } 
@@ -314,6 +337,7 @@ function saveGame() {
    console.log(saveFiles)
    saveFiles.push(saveGameName);
    localStorage.setItem("saveFiles", JSON.stringify(saveFiles));
+   alert("Game saved!")
 
     
 }
@@ -322,6 +346,7 @@ saveBtn.addEventListener("click", saveGame);
 
 function loadGame() {
     if (saveFiles.length === 0) {
+        alert("No save games found");
         console.log("No save files found.");
         return;
     }
@@ -344,9 +369,10 @@ function loadGame() {
    
     character = savedData.character;
     gender = savedData.gender;
+    characterCheck(character);
     textLogs = savedData.textLogs;
     currentChoiceIds = savedData.currentChoiceIds;
-
+    pastChoices = savedData.pastChoices;
     currentText.textContent = savedData.currentSceneText;
     sceneImg.src = savedData.currentSceneImage;
 
@@ -360,23 +386,68 @@ function loadGame() {
 
     goTo("game-Screen");
     choiceCheck(savedData.currentChoiceIds);
-    choice1.textContent = savedData.pastChoices.at(0);
-    choice2.textContent = savedData.pastChoices.at(1);
-    choice3.textContent = savedData.pastChoices.at(2);
+    choice1.textContent = pastChoices.at(0);
+    choice2.textContent = pastChoices.at(1);
+    choice3.textContent = pastChoices.at(2);
     console.log("File loaded");
-    return character, gender, textLogs, currentChoiceIds;
-}
+    return character, gender, textLogs, currentChoiceIds, pastChoices;
+} 
 
 loadBtn.addEventListener("click", loadGame);
 
 
 function clearFiles() {
-    let confirm = prompt("Are you sure you want delete ALL save files? If you would like to proceed, please type 'confirm'")
-    if (confirm.toLowerCase === "confirm") {
-        localStorage.clear();
+    let confirm = prompt("Are you sure you want delete ALL save files? If you would like to proceed, please type 'confirm'");
+    if (confirm.toLowerCase() === "confirm") {
+        localStorage.clear(storedFiles);
+        saveFiles.length = 0; 
     }
     else {
         alert("Save files not cleared");
     }
 };
 
+eraseBtn.addEventListener("click", clearFiles)
+
+function closeSettingsOverlay () {
+    if (settingsStatus == true) {
+        settingsOverlay.style = "display:none;"
+        settingsStatus = false;
+        return settingsStatus;
+    }
+};
+
+closeSettings.addEventListener("click", closeSettingsOverlay);
+
+
+function shopWealth() {
+    
+    wealthCount.textContent = `$${gameStats.wealth}`;
+
+    if (wealthMultiplier >= maxPurchase) {
+        multiplierBtn.textContent = 'Maxed out';
+        multiplierBtn.disabled = true;
+    } else {
+        const nextMultiplier = Math.round((1 + (wealthMultplier+ 1) * multiplierIncrease) * 100);
+        multiplierBtn.textContent = `$${multiplierCost}, Next: ${nextMultiplier}% earnings`;
+        multiplierBtn.disabled = gameStats.wealth < multiplierCost;
+    }
+}
+
+multiplierBtn.addEventListener('click', ()=> {
+if (gameStats.wealth < multiplierCost || wealthMultiplier >= maxPurchase) return;
+gameStats.wealth -=multiplierCost
+wealthCount++;
+
+const newMultiplier = 1 + wealthCount * multiplierIncrease;
+ window.miniGameWealthMult  = newMult;
+window.miniGameWealthMult2 = newMult;
+shopWealth();
+});
+
+function statsCheck(checker){
+    gameStats.fame = gameStats.fame + checker.stats.fame;
+    gameStats.wealth = gameStats.wealth + checker.stats.wealth;
+    gameStats.heat = gameStats.heat + checker.stats.heat;
+    return gameStats;
+}

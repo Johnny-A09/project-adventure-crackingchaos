@@ -3,6 +3,7 @@ window.miniGameWealthMult2 = 1;
 window.miniGameHeatMult2 = 1;
 
 
+
 var ZONES2 = [
   { pct: 0,  w: 28, color: '#e74c3c', points: -2 },
   { pct: 28, w: 18, color: '#e67e22', points:  -1 },
