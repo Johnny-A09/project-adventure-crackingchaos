@@ -52,6 +52,17 @@ const multiplierIncrease = 0.05;
 const wealthCount = document.getElementById("wealth-val");
 const multiplierBtn = document.querySelector('#wealth-mult-btn');
 
+const MAX_STAT = 100;
+
+function updateStatBars() {
+  const famePct = Math.min(gameStats.fame / MAX_STAT * 100, 100);
+  const heatPct = Math.min(gameStats.heat / MAX_STAT * 100, 100);
+  document.getElementById("fame-bar").style.width = famePct + "%";
+  document.getElementById("heat-bar").style.width = heatPct + "%";
+  document.getElementById("fame-val").textContent = gameStats.fame;
+  document.getElementById("heat-val").textContent = gameStats.heat;
+}
+
 function goTo(screen) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(screen).classList.add('active');
@@ -449,5 +460,16 @@ function statsCheck(checker){
     gameStats.fame = gameStats.fame + checker.stats.fame;
     gameStats.wealth = gameStats.wealth + checker.stats.wealth;
     gameStats.heat = gameStats.heat + checker.stats.heat;
+    updateStatBars();
+    statEndingCheck();
     return gameStats;
+}
+
+function statEndingCheck(){
+    if(gameStates.fame == 100){
+        sceneCreation(story.fameEnding);
+    }
+    if(gameStates.heat == 100){
+        sceneCreation(story.sgaClosing);
+    }
 }

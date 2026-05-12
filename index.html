@@ -116,16 +116,36 @@
     <!--Start of Main Game Screen-->
     <div id="game-Screen" class="screen"> 
         <section id="game-Container">
+            <div id="stat-bars">
+                <div class="stat-row">
+                    <div class="stat-header">
+                    <span class="stat-label">Fame</span>
+                    <span id="fame-val">0</span>
+                    </div>
+                    <div class="bar-track">
+                    <div class="bar-fill bar-fame" id="fame-bar"></div>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-header">
+                    <span class="stat-label">Heat</span>
+                    <span id="heat-val">0</span>
+                    </div>
+                    <div class="bar-track">
+                    <div class="bar-fill bar-heat" id="heat-bar"></div>
+                    </div>
+                </div>
+            </div>
             <div class="background" id="background">
                 <img src="images/placeholder.jpeg" id="scene" alt="story background">
                 <img src="images/jessie-male.png" alt="main character" id="scene-character" class="scene-korea">
             </div>
-        <section id="current-text" class="text-cont"></section>
-        <section id="choice-Container">
-            <button id="choice-1" class="choices"></button>
-            <button id="choice-2" class="choices"></button>
-            <button id="choice-3" class="choices"></button>
-        </section>
+            <section id="current-text" class="text-cont"></section>
+            <section id="choice-Container">
+                <button id="choice-1" class="choices"></button>
+                <button id="choice-2" class="choices"></button>
+                <button id="choice-3" class="choices"></button>
+            </section>
         </section>
     </div>
      <!--End of Main Game Screen-->

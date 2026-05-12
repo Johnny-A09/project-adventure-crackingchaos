@@ -341,7 +341,7 @@ export const story = {
     text: `You initiate a controlled shutdown. You and William dismantle the operation piece by piece over 72 hours. Equipment is sold. Supplies are distributed. The location is cleaned. By the time Division 7 gets a warrant, there's nothing to find.\nYou've escaped, barely and quietly. William is safe. You're free. You've lost Cord's operation, but you've kept your lives and your freedom.\nLos Angeles is still out there. Smaller cities aren't. You make a choice about where to go next.`,
     choice: ['Disappear into a new life, take the escape ending', 'Go back to Los Angeles and rebuild from scratch'],
     idsForChoices: ['escapeEnding', 'fameRebuild'],
-    pictureForScene: "/scenes/sgaShutDown.png",//still needs a scene
+    pictureForScene: "/scenes/sgaShutDown.png",
     stats:{fame:-20, wealth:0, heat:-30} 
     },
 

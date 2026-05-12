@@ -626,7 +626,24 @@ background-color: var(--deny);
     animation: spinGame 2s linear infinite;
 }
 
-
+.bar-track {
+  height: 10px;
+  background: #222;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+.bar-fame {
+    background: #7F77DD;
+}
+.bar-heat {
+    background: #D85A30;
+}
 
 
 @keyframes spinGame {
